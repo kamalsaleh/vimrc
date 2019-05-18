@@ -37,8 +37,10 @@ Plugin 'tomasr/molokai'
 Plugin 'dracula/dracula-theme'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lifepillar/vim-solarized8'
-
 Plugin 'flazz/vim-colorschemes'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'bkad/camelcasemotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +67,10 @@ colorscheme desert  "molokai desert
 if has("syntax")
   syntax on             " Default to no syntax highlightning 
 endif
+
+"####################################
+"######## Camel Case ################
+call camelcasemotion#CreateMotionMappings(',')
 
 "#####################################
 "######## Begin Gap ##################
@@ -170,6 +176,8 @@ set wrap "Wrap lines
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+" To remove highlighting after searches
+nnoremap <Leader><space> :noh<cr>
 
 " to avoid errors
 " 
@@ -177,6 +185,9 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+
+" " + y copy a selected text in visual mode to clipboard ( or install gvim)
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -275,6 +286,7 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

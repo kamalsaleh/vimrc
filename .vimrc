@@ -1,7 +1,6 @@
 
 "######################################
 "######### Begin Vundle.vim ###########
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -17,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plugin 'https://github.com/tpope/vim-fugitive.git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -179,12 +178,17 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " To remove highlighting after searches
 nnoremap <Leader><space> :noh<cr>
 
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
 " to avoid errors
 " 
 command WQ wq
 command Wq wq
 command W w
 command Q q
+command C !/bin/bash
 
 " " + y copy a selected text in visual mode to clipboard ( or install gvim)
 set clipboard=unnamedplus

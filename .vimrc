@@ -179,8 +179,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 nnoremap <Leader><space> :noh<cr>
 
 
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Down> :tabprevious<CR>
+nnoremap <C-Up> :tabnext<CR>
 
 " to avoid errors
 " 
